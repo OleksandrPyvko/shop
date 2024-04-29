@@ -23,13 +23,22 @@ function Carousel({ images }) {
           transition: "transform 0.5s ease",
         }}
       >
-        {images.map((img, index) => (
-          <img
+        {images.map((slide, index) => (
+          <div
             key={index}
-            src={img}
-            alt={index}
-            className="w-full h-svh object-cover flex-shrink-0"
-          ></img>
+            className="w-full relative h-svh object-cover flex-shrink-0"
+          >
+            <div className="absolute w-[100px] top-[65px] left-[30px] uppercase text-stone-300  dela ">
+              <span className="">{slide.title}</span> <br />
+              <span className="text-stone-700 font-bold">₴ {slide.price}</span>
+            </div>
+            
+            <img
+              src={slide.img}
+              alt={index}
+              className="w-full h-svh object-cover flex-shrink-0"
+            ></img>
+          </div>
         ))}
       </div>
     </div>
