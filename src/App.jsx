@@ -1,6 +1,7 @@
 import About from "./components/About";
 import Carousel from "./components/Carousel";
 import Header from "./components/Header";
+import RunningLine from "./components/RunningLine";
 const images = [
   {
     img: "../public/1.jpg",
@@ -23,6 +24,7 @@ function App() {
     <div className="w-full h-lvg">
       <Carousel images={images} />
       <Header />
+      <RunningLine />
       <About />
     </div>
   );

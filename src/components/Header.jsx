@@ -19,10 +19,11 @@ function Header() {
       className={`fixed transition-all duration-300 top-0 flex justify-between w-full py-5 px-4 ${
         scrolled ? "bg-stone-800 opacity-80 text-stone-100" : ""
       }`}
-      
     >
       <button>=</button>
-      <span className="ml-4 font-semibold drop-shadow-xl dela ">T - S H O P</span>
+      <span className="ml-4 font-semibold drop-shadow-xl dela ">
+        T - S H O P
+      </span>
       <button>
         <svg
           fill={scrolled ? "#ffffff" : "#000000"}
