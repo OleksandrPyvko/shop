@@ -1,13 +1,31 @@
+import { useEffect, useState } from "react";
+
 function Header() {
+  const [scrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      const scrolled = window.scrollY > 0;
+      setIsScrolled(scrolled);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
-    <div className="absolute top-0 flex justify-between w-full py-5 px-4">
+    <div
+      className={`fixed transition-all duration-300 top-0 flex justify-between w-full py-5 px-4 ${
+        scrolled ? "bg-stone-800 opacity-80 text-stone-100" : ""
+      }`}
+      
+    >
       <button>=</button>
-      <span className="ml-4 font-semibold drop-shadow-xl [35px_35px_35px_rgb(236, 0, 0)] ">
-        Z O H O
-      </span>
+      <span className="ml-4 font-semibold drop-shadow-xl dela ">T - S H O P</span>
       <button>
         <svg
-          fill="#000000"
+          fill={scrolled ? "#ffffff" : "#000000"}
           height="20px"
           width="35px"
           version="1.1"
