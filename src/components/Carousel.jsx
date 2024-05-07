@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import LinkButton from "../ui/LinkButton";
 
 function Carousel({ images }) {
   const [slide, setSlide] = useState(0);
@@ -42,20 +43,13 @@ function Carousel({ images }) {
               transform: `translateY(${scrollPosition * 0.3}px)`,
             }}
           >
-            <div className="absolute w-[100px] top-[65px] left-[30px] uppercase text-stone-300  dela ">
-              <span
-                className=""
-                style={{
-                  transform: `translateY(-${(scrollPosition * 0, 8)}px)`,
-                }}
-              >
-                {slide.title}
-              </span>
-              <br />
-              <span className="text-stone-700 font-bold">₴ {slide.price}</span>
-              <button >
-                <AiOutlineArrowRight className="text-stone-700 rounded-full bg-stone-500" />
-              </button>
+            <div className="absolute w-[110px] top-[65px] left-[30px] uppercase text-stone-300  dela flex flex-col ">
+              <span>{slide.title}</span>
+
+              <span className="text-stone-700 font-bold my-1 mb-3">₴ {slide.price}</span>
+              <LinkButton>
+                <AiOutlineArrowRight />
+              </LinkButton>
             </div>
 
             <img

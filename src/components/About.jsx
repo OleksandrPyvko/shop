@@ -1,11 +1,26 @@
+import over from "../../public/over.png";
+
 function About() {
   return (
-    <div className="h-lvh bg-[#adaca3]">
-      <div>
-        <span>EST. 2019</span>
-        <h2>ПРО — БРЕНД</h2>
+    <div className=" bg-[#adaca3]">
+      <div className="p-6">
+        <span className="font-bold text-stone-700">EST. 2019</span>
+        <h2 className="font-bold text-stone-600">ПРО — БРЕНД</h2>
       </div>
-      <div></div>
+      <div className="relative h-[70%]">
+        <img src={over} alt="" className="z-10 relative " />
+        <div className="bg-stone-500 rounded-md w-[90%] h-[300px] z-0 m-auto absolute bottom-0 right-[50%] translate-x-[50%]"></div>
+      </div>
+      <article className="p-6 montserrat-alternates-semibold  text-stone-600 ">
+        T-SHOP - український бренд одягу, що поєднав в собі утилітарний,
+        лаконічний та зручний дизайн. Наша місія - втілити динамічний ритм життя
+        та свободу творчих людей в самобутньому оверсайз одязі. В кожній моделі
+        ми приділяємо особливу увагу деталям, створюючи оригінальний дизайн,
+        який збагачує ваш стиль. Наше власне виробництво дає нам можливість бути
+        гнучкими та втілювати будь-які ідеї до найменших дрібниць. Разом з ZOHO
+        ви зможете відчути комфорт, якість і самовиразність у кожному образі.
+        Досягніть свободи вибору та неперевершеності з нами.
+      </article>
     </div>
   );
 }
