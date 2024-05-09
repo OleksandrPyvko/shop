@@ -46,9 +46,11 @@ function Carousel({ images }) {
             <div className="absolute w-[110px] top-[65px] left-[30px] uppercase text-stone-300  dela flex flex-col ">
               <span>{slide.title}</span>
 
-              <span className="text-stone-700 font-bold my-1 mb-3">₴ {slide.price}</span>
+              <span className="text-stone-700 font-bold my-1 mb-3">
+                ₴ {slide.price}
+              </span>
               <LinkButton>
-                <AiOutlineArrowRight />
+                
               </LinkButton>
             </div>
 

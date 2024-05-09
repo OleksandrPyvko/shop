@@ -1,7 +1,11 @@
 import About from "./components/About";
 import Carousel from "./components/Carousel";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import RunningLine from "./components/RunningLine";
+import Menu from "./components/Menu";
+import { MenuProvider } from "./context/MenuContext";
+
 const images = [
   {
     img: "../public/1.jpg",
@@ -21,11 +25,15 @@ const images = [
 ];
 function App() {
   return (
-    <div className="w-full h-lvg">
+    <div className="w-full h-lvg ">
+      <MenuProvider>
       <Carousel images={images} />
       <Header />
       <RunningLine />
       <About />
+      <Menu />
+      <Footer />
+      </MenuProvider>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import over from "../../public/over.png";
+import LinkButton from "../ui/LinkButton";
 
 function About() {
   return (
@@ -21,6 +22,19 @@ function About() {
         ви зможете відчути комфорт, якість і самовиразність у кожному образі.
         Досягніть свободи вибору та неперевершеності з нами.
       </article>
+
+      <div className="flex flex-col p-6">
+        <span className="monoton text-2xl">MADE WITH LOVE</span>
+        <span className="monoton text-3xl m-auto">MAN and WOMAN</span>
+        <span className="monoton text-2xl ml-auto">CLOTHING</span>
+      </div>
+
+      <div className="relative flex py-6">
+        <span className="ml-[20%] mr-[10px] text-sm">
+          Переглянути <br /> товари
+        </span>
+        <LinkButton className="mr-auto" />
+      </div>
     </div>
   );
 }
