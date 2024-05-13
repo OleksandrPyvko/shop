@@ -1,12 +1,11 @@
 import { Outlet } from "react-router-dom";
-import { MenuProvider } from "../context/MenuContext";
-import Header from "./Header";
-import Footer from "./Footer";
-import Menu from "./Menu";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Menu from "../components/Menu";
 
 function AppLayout() {
   return (
-    <div className="container">
+    <div>
       <Header />
       <Menu />
       <Outlet />

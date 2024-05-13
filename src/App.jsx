@@ -1,8 +1,9 @@
 import { MenuProvider } from "./context/MenuContext";
-import AppLayout from "./components/AppLayout";
+import AppLayout from "./ui/AppLayout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
+import Delivery from "./pages/Delivery";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <Route element={<AppLayout />}>
               <Route path="/" element={<Home />} />
               <Route path="catalog" element={<Catalog />} />
+              <Route path="delivery" element={<Delivery />} />
             </Route>
 
             {/* <Header />
