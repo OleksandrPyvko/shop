@@ -49,9 +49,7 @@ function Carousel({ images }) {
               <span className="text-stone-700 font-bold my-1 mb-3">
                 ₴ {slide.price}
               </span>
-              <LinkButton>
-                
-              </LinkButton>
+              <LinkButton></LinkButton>
             </div>
 
             <img

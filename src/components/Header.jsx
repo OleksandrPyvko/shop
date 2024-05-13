@@ -19,7 +19,7 @@ function Header() {
   return (
     <>
       <div
-        className={`fixed transition-all duration-300 z-50 top-0 flex justify-between w-full py-5 px-4 ${
+        className={`fixed transition-all duration-300 z-50 top-0 flex justify-between w-full py-5 px-6 ${
           scrolled ? "bg-stone-800 opacity-80 text-stone-100" : ""
         }`}
       >

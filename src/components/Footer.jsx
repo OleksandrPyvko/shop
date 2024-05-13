@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className="bg-stone-700 text-stone-300 divide-y hover:divide-y-8 p-5 ">
+    <div className="bg-stone-800 text-stone-500 font-bold divide-y-2 divide-stone-500  p-5 ">
       <div className="">
         <div className="flex py-2  ">
           <div className="pr-6 py-5">01</div>
