@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import Delivery from "./pages/Delivery";
 
+
 function App() {
   return (
     <div className="w-full h-lvg ">

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MenuProvider, useMenu } from "../context/MenuContext";
+import { useMenu } from "../context/MenuContext";
 
 function Header() {
   const [scrolled, setIsScrolled] = useState(false);
@@ -19,16 +19,14 @@ function Header() {
   return (
     <>
       <div
-        className={` fixed transition-all duration-300 z-50 top-0 flex justify-between w-full py-5 px-6 ${
+        className={` fixed transition-all duration-300 z-50 top-0 left-0 right-0 flex justify-between w-screen py-5 px-6 ${
           scrolled
             ? "bg-stone-800 bg-opacity-50 text-stone-300 backdrop-blur-sm "
             : ""
         }`}
       >
         <button onClick={toggleMenu}>=</button>
-        <span className="ml-4 font-semibold drop-shadow-xl dela ">
-          T - S H O P
-        </span>
+        <span className="ml-4 font-semibold  dela">T - S H O P</span>
         <button>
           <svg
             fill={scrolled ? "#d6d3d1" : "#292524"}

@@ -12,7 +12,7 @@ function About() {
         <img src={over} alt="" className="z-10 relative " />
         <div className="bg-stone-500 rounded-md w-[90%] h-[300px] z-0 m-auto absolute bottom-0 right-[50%] translate-x-[50%]"></div>
       </div>
-      <article className="p-6 montserrat-alternates-semibold  text-stone-600 ">
+      <article className="p-6 font-semibold monteserrat  text-stone-600 ">
         T-SHOP - український бренд одягу, що поєднав в собі утилітарний,
         лаконічний та зручний дизайн. Наша місія - втілити динамічний ритм життя
         та свободу творчих людей в самобутньому оверсайз одязі. В кожній моделі

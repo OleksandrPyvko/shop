@@ -32,7 +32,7 @@ function Carousel({ images }) {
         className="flex"
         style={{
           transform: `translateX(-${slide * 100}%)`,
-          transition: "transform 0.5s ease",
+          transition: "transform 1s ease",
         }}
       >
         {images.map((slide, index) => (
@@ -40,7 +40,7 @@ function Carousel({ images }) {
             key={index}
             className="w-full relative h-svh object-cover flex-shrink-0 "
             style={{
-              transform: `translateY(${scrollPosition * 0.3}px)`,
+              transform: `translateY(${scrollPosition * 0.4}px)`,
             }}
           >
             <div className="absolute w-[110px] top-[65px] left-[30px] uppercase text-stone-300  dela flex flex-col ">
