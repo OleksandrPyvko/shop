@@ -2,12 +2,7 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      fontFamily: {
-        pattaya: ["Pattaya", 'sans-serif'],
-        // Add more custom font families as needed
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };

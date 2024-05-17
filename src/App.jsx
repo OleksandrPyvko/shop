@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import Delivery from "./pages/Delivery";
+import FAQ from "./pages/FAQ";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="catalog" element={<Catalog />} />
               <Route path="delivery" element={<Delivery />} />
+              <Route path="faq" element={<FAQ />} />
             </Route>
 
             {/* <Header />

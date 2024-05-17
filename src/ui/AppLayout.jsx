@@ -8,7 +8,7 @@ function AppLayout() {
     <div>
       <Header />
       <Menu />
-      <Outlet />
+      <Outlet  />
       <Footer />
     </div>
   );
