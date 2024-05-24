@@ -53,8 +53,10 @@ function Carousel({ images }) {
             </div>
 
             <img
+              srcSet={`${slide.imgSmall} 480w, ${slide.imgMedium} 768w, ${slide.imgLarge} 1200w`}
               src={slide.img}
               alt={index}
+              loading="lazy"
               className="w-full h-svh object-cover flex-shrink-0"
             ></img>
           </div>

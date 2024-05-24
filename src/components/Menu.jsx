@@ -36,7 +36,9 @@ function Menu() {
             доставка
           </NavLink>
         </li>
-        <li>Допомога</li>
+        <NavLink onClick={handleClose} to="/faq">
+          допомога
+        </NavLink>
         <li>Контакти</li>
         <li>Про T-SHOP</li>
       </ul>

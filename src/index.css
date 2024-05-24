@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.transition-height {
+  transition: height 0.5s ease-in-out;
+}
+
 .monoton {
   font-family: "Monoton", sans-serif;
   font-weight: 400;
@@ -19,6 +23,10 @@
   font-family: "Dela Gothic One", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.text-shadow-stone {
+  text-shadow: 1px 2px hsla(32, 13%, 19%, 0.5);
 }
 
 :root {

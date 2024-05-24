@@ -19,17 +19,19 @@ function Header() {
   return (
     <>
       <div
-        className={` fixed transition-all duration-300 z-50 top-0 left-0 right-0 flex justify-between w-screen py-5 px-6 ${
+        className={`text-shadow-stone fixed transition-all duration-300 z-50 top-0 left-0 right-0 flex justify-between w-screen py-5 px-6 ${
           scrolled
             ? "bg-stone-800 bg-opacity-50 text-stone-300 backdrop-blur-sm "
             : ""
         }`}
       >
         <button onClick={toggleMenu}>=</button>
-        <span className="ml-4 font-semibold  dela">T - S H O P</span>
+        <span className="ml-4 font-semibold text-xl dela text-stone-300 ">
+          T - S H O P
+        </span>
         <button>
           <svg
-            fill={scrolled ? "#d6d3d1" : "#292524"}
+            fill={scrolled ? "#d6d3d1" : "#2b2625"}
             height="20px"
             width="35px"
             version="1.1"
