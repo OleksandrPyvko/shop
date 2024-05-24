@@ -39,8 +39,14 @@ function Menu() {
         <NavLink onClick={handleClose} to="/faq">
           допомога
         </NavLink>
-        <li>Контакти</li>
-        <li>Про T-SHOP</li>
+        <li>
+          <NavLink onClick={handleClose} to="/contacts">
+            контакти
+          </NavLink>
+        </li>
+        <li><NavLink onClick={handleClose} to="/about-us">
+            про t-shop
+          </NavLink></li>
       </ul>
     </div>
   );

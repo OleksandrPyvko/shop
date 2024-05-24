@@ -5,7 +5,8 @@ import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import Delivery from "./pages/Delivery";
 import FAQ from "./pages/FAQ";
-
+import AboutUs from "./pages/AboutUs";
+import Contacts from "./pages/Contacts";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
               <Route path="catalog" element={<Catalog />} />
               <Route path="delivery" element={<Delivery />} />
               <Route path="faq" element={<FAQ />} />
+              <Route path="contacts" element={<Contacts />} />
+              <Route path="about-us" element={<AboutUs />} />
             </Route>
 
             {/* <Header />

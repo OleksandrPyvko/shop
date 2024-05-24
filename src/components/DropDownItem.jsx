@@ -14,7 +14,7 @@ function DropDownItem({ title, desc, isOpen, onClick }) {
 
   return (
     <div
-      className="text-neutral-500 mx-6 transition-all duration-1000 ease-in-out  border-y border-stone-800 flex flex-col "
+      className="text-stone-500 mx-6 transition-all duration-1000 ease-in-out  border-y border-stone-800 flex flex-col "
       style={{
         paddingBottom: isOpen ? "2rem" : "",
       }}
@@ -34,7 +34,7 @@ function DropDownItem({ title, desc, isOpen, onClick }) {
 
       <p
         ref={contentRef}
-        className={`text-sm text-neutral-500 overflow-y-hidden opacity-0 transition-all duration-700 ease-in-out ${
+        className={`text-sm text-stone-500 overflow-y-hidden opacity-0 transition-all duration-700 ease-in-out ${
           isOpen ? " opacity-100" : ""
         }`}
         style={{

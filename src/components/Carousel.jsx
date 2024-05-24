@@ -43,7 +43,7 @@ function Carousel({ images }) {
               transform: `translateY(${scrollPosition * 0.4}px)`,
             }}
           >
-            <div className="absolute w-[110px] top-[65px] left-[30px] uppercase text-stone-300  dela flex flex-col ">
+            <div className="absolute w-[110px] top-[65px] left-[30px] uppercase text-stone-300 dela text-lg flex flex-col ">
               <span>{slide.title}</span>
 
               <span className="text-stone-700 font-bold my-1 mb-3">
