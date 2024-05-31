@@ -1,7 +1,9 @@
+import CatalogFilter from "../components/CatalogFilter"
+
 function Catalog() {
     return (
         <div>
-            Catalog
+            <CatalogFilter />
         </div>
     )
 }

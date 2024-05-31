@@ -8,13 +8,18 @@ export function useMenu() {
 
 export function MenuProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isCatalogOpen, setIsCatalogOpen] = useState(true);
 
   function toggleMenu() {
     setIsOpen(!isOpen);
   }
 
+  function toggleCatalog() {
+    setIsCatalogOpen((prev) => !prev);
+  }
+
   return (
-    <MenuContext.Provider value={{ isOpen, toggleMenu }}>
+    <MenuContext.Provider value={{ isOpen, toggleMenu, isCatalogOpen, toggleCatalog }}>
       {children}
     </MenuContext.Provider>
   );

@@ -9,8 +9,8 @@ function Delivery() {
         </div>
         <div className="flex justify-center overflow-hidden min-h-[450px] ">
           <img
-            srcSet="../public/shipping-image.png 480w, ../public/shipping-image-med.png 768w, ../public/shipping-image.png 1200w"
-            src="../public/shipping-image.png"
+            srcSet="../shipping-image.png 480w, ../public/shipping-image-med.png 768w, ../public/shipping-image.png 1200w"
+            src="../shipping-image.png"
             alt="delivery image"
             className="object-cover min-w-[840px] absolute top-0"
           />

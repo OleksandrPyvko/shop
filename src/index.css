@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.base {
+  background-color: #adaca3;
+}
+
 .transition-height {
   transition: height 0.5s ease-in-out;
 }

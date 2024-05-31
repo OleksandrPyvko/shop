@@ -2,15 +2,20 @@ import { NavLink } from "react-router-dom";
 import { useMenu } from "../context/MenuContext";
 
 function Menu() {
-  const { isOpen, toggleMenu } = useMenu();
+  const { isOpen, toggleMenu, toggleCatalog } = useMenu();
 
   function handleClose() {
     toggleMenu((prev) => !prev);
   }
 
+  function handleCatalog() {
+    toggleMenu((prev) => !prev);
+    toggleCatalog((prev) => !prev);
+  }
+
   return (
     <div
-      className={`bg-stone-900 fixed top-0 w-[100%] transition-all h-lvh z-50 duration-500 text-white px-6 ${
+      className={`bg-stone-900 fixed top-0 w-[100%] transition-transform transform h-lvh z-50 duration-500 text-white px-6 ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
@@ -27,7 +32,7 @@ function Menu() {
           </NavLink>
         </li>
         <li>
-          <NavLink onClick={handleClose} to="/catalog">
+          <NavLink onClick={handleCatalog} to="/catalog">
             каталог
           </NavLink>
         </li>
@@ -44,9 +49,11 @@ function Menu() {
             контакти
           </NavLink>
         </li>
-        <li><NavLink onClick={handleClose} to="/about-us">
+        <li>
+          <NavLink onClick={handleClose} to="/about-us">
             про t-shop
-          </NavLink></li>
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
