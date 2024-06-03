@@ -2,49 +2,56 @@ import { useSearchParams } from "react-router-dom";
 
 function CatalogFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const currentCategory = searchParams.get("category");
 
   function handleClick(value) {
-    searchParams.set("categoory", value);
+    searchParams.set("category", value);
     setSearchParams(searchParams);
+  }
+
+  function buttonClass(value) {
+    return `flex-shrink-0 font-semibold text-2xl uppercase py-2 px-6 text-stone-600  ${
+      currentCategory === value ? "active underline" : ""
+    }`;
   }
 
   return (
     <div
-      className="flex overflow-x-auto whitespace-nowrap scroll-snap-x base py-[75px]"
+      className="flex overflow-x-auto whitespace-nowrap scroll-snap-x  pt-[75px] pb-[20px] "
       style={{ scrollbarWidth: "none" }}
     >
       <button
-        className="flex-shrink-0 font-semibold text-4xl uppercase py-2 px-6"
+        className={buttonClass("hoodies")}
         onClick={() => handleClick("hoodies")}
       >
         худі
       </button>
       <button
-        className="flex-shrink-0 font-semibold text-4xl uppercase py-2 px-6"
+        className={buttonClass("sweatshirts")}
         onClick={() => handleClick("sweatshirts")}
       >
         світшоти
       </button>
       <button
-        className="flex-shrink-0 font-semibold text-4xl uppercase py-2 px-6"
+        className={buttonClass("outerwear")}
         onClick={() => handleClick("outerwear")}
       >
         верхній одяг
       </button>
       <button
-        className="flex-shrink-0 font-semibold text-4xl uppercase py-2 px-6"
+        className={buttonClass("shorts")}
         onClick={() => handleClick("shorts")}
       >
         шорти
       </button>
       <button
-        className="flex-shrink-0 font-semibold text-4xl uppercase py-2 px-6"
+        className={buttonClass("t-shirts")}
         onClick={() => handleClick("t-shirts")}
       >
         футболки
       </button>
       <button
-        className="flex-shrink-0 font-semibold text-4xl uppercase py-2 px-6"
+        className={buttonClass("skirts")}
         onClick={() => handleClick("skirts")}
       >
         спідниці

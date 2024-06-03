@@ -1,11 +1,15 @@
-import CatalogFilter from "../components/CatalogFilter"
+import CatalogFilter from "../components/CatalogFilter";
+import ItemCard from "../components/ItemCard";
 
 function Catalog() {
-    return (
-        <div>
-            <CatalogFilter />
-        </div>
-    )
+  return (
+    <div className="base-dark">
+      <CatalogFilter />
+      <ItemCard />
+      <ItemCard />
+      <ItemCard />
+    </div>
+  );
 }
 
-export default Catalog
+export default Catalog;

@@ -25,13 +25,14 @@ function Header() {
             : ""
         }`}
       >
-        <button onClick={toggleMenu}>=</button>
+        <button onClick={toggleMenu} className="text-[#d6d3d1]">=</button>
         <span className="ml-4 font-semibold text-xl dela text-stone-300 ">
           T - S H O P
         </span>
         <button>
+        {/* #2b2625 */}
           <svg
-            fill={scrolled ? "#d6d3d1" : "#2b2625"}
+            fill={scrolled ? "#d6d3d1" : "#d6d3d1"}
             height="20px"
             width="35px"
             version="1.1"
