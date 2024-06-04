@@ -1,15 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
 import { useMenu } from "../context/MenuContext";
 
 function Menu() {
   const { isCatalogOpen, toggleCatalog } = useMenu();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  function handleClose() {
-    toggleCatalog();
-  }
-  
   function handleClick(value) {
-
+    searchParams.set("category", value);
+    setSearchParams(searchParams);
+    toggleCatalog();
   }
 
   return (
@@ -24,34 +23,36 @@ function Menu() {
       <p className="uppercase w-full text-center border-y py-4 text-stone-400 border-stone-400">
         Вхід / Реєстрація
       </p>
-      <ul className={`flex flex-col gap-8 font-semibold text-xl text-stone-400 py-6 uppercase duration-1000 transition-all  ${
-        isCatalogOpen ? 'opacity-100'  : 'opacity-0'
-      }`}>
+      <ul
+        className={`flex flex-col gap-8 font-semibold text-xl text-stone-400 py-6 uppercase duration-1000 transition-all  ${
+          isCatalogOpen ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <li>
-          <NavLink onClick={handleClose} to="/">
+          <NavLink onClick={() => handleClick("hoodies")} to="/">
             ХУДІ
           </NavLink>
         </li>
         <li>
-          <NavLink onClick={handleClose} to="/catalog">
+          <NavLink onClick={() => handleClick("sweatshirts")} to="/catalog">
             світшоти
           </NavLink>
         </li>
         <li>
-          <NavLink onClick={handleClose} to="/delivery">
+          <NavLink onClick={() => handleClick("outerwear")} to="/catalog">
             верхній одяг
           </NavLink>
         </li>
-        <NavLink onClick={handleClose} to="/faq">
+        <NavLink onClick={() => handleClick("shorts")} to="/catalog">
           шорти
         </NavLink>
         <li>
-          <NavLink onClick={handleClose} to="/contacts">
+          <NavLink onClick={() => handleClick("t-shirts")} to="/catalog">
             футболки
           </NavLink>
         </li>
         <li>
-          <NavLink onClick={handleClose} to="/about-us">
+          <NavLink onClick={() => handleClick("skirts")} to="/catalog">
             спідниці
           </NavLink>
         </li>
