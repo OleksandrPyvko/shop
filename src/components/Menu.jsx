@@ -5,12 +5,12 @@ function Menu() {
   const { isOpen, toggleMenu, toggleCatalog } = useMenu();
 
   function handleClose() {
-    toggleMenu((prev) => !prev);
+    toggleMenu();
   }
 
   function handleCatalog() {
-    toggleMenu((prev) => !prev);
-    toggleCatalog((prev) => !prev);
+    toggleMenu();
+    toggleCatalog();
   }
 
   return (
