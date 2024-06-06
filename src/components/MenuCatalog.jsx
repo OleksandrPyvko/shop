@@ -5,9 +5,7 @@ function Menu() {
   const { isCatalogOpen, toggleCatalog } = useMenu();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  function handleClick(value) {
-    searchParams.set("category", value);
-    setSearchParams(searchParams);
+  function handleClick() {
     toggleCatalog();
   }
 
@@ -29,30 +27,30 @@ function Menu() {
         }`}
       >
         <li>
-          <NavLink onClick={() => handleClick("hoodies")} to="/">
+          <NavLink to="catalog?category=hoodies" onClick={handleClick}>
             ХУДІ
           </NavLink>
         </li>
         <li>
-          <NavLink onClick={() => handleClick("sweatshirts")} to="/catalog">
+          <NavLink to="catalog?category=sweatshirts" onClick={handleClick}>
             світшоти
           </NavLink>
         </li>
         <li>
-          <NavLink onClick={() => handleClick("outerwear")} to="/catalog">
+          <NavLink to="catalog?category=outerwear" onClick={handleClick}>
             верхній одяг
           </NavLink>
         </li>
-        <NavLink onClick={() => handleClick("shorts")} to="/catalog">
+        <NavLink to="catalog?category=shorts" onClick={handleClick}>
           шорти
         </NavLink>
         <li>
-          <NavLink onClick={() => handleClick("t-shirts")} to="/catalog">
+          <NavLink to="catalog?category=t-shirts" onClick={handleClick}>
             футболки
           </NavLink>
         </li>
         <li>
-          <NavLink onClick={() => handleClick("skirts")} to="/catalog">
+          <NavLink to="catalog?category=skirts" onClick={handleClick}>
             спідниці
           </NavLink>
         </li>
