@@ -10,7 +10,7 @@ function CatalogFilter() {
   }
 
   function buttonClass(value) {
-    return `flex-shrink-0 font-semibold text-2xl uppercase py-2 px-6 text-stone-600  ${
+    return `flex-shrink-0 font-semibold text-2xl uppercase py-2 px-4 text-stone-600  ${
       currentCategory === value ? "active underline" : ""
     }`;
   }
