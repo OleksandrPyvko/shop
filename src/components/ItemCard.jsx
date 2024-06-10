@@ -1,16 +1,56 @@
-function ItemCard() {
+import { useNavigate } from "react-router-dom";
+
+export function ItemCard({ item, isLoading }) {
+  const navigate = useNavigate();
+  const id = item.id;
+
+  function handleClick() {
+    navigate(`/item/${id}`);
+  }
+
   return (
-    <div className=" py-6 px-4 shadow-xl text-stone-400">
-      <img
-        src="787e9bf2-c32a-468f-97bd-c00f5c21f863.jfif"
-        alt=""
-        className="w-full h-96 object-cover rounded-lg "
-      />
-      <h3>ХУДІ "УКРАЇНА"</h3>
-      <p className="text-xs">Артикул 00001</p>
-      <p>Ціна 1 600₴</p>
-    </div>
+    <>
+      {isLoading ? (
+        "Loading"
+      ) : (
+        <div
+          onClick={() => handleClick(id)}
+          className=" py-6 px-4 shadow-xl text-stone-300   w-full divide-y divide-stone-600"
+          style={{
+            cursor: "pointer",
+          }}
+        >
+          <img
+            src={item.image}
+            alt="item-image"
+            className="h-96 w-full min-h-96 object-cover"
+          />
+          <p className="py-1 uppercase">{item.name}</p>
+          <div className="flex justify-between py-1">
+            <span className="text-sm text-stone-400">
+              Артикул: {item.article}
+            </span>
+            <p className="">{item.price} UAH</p>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
 export default ItemCard;
+
+{
+  /* <div className=" py-6 px-4 shadow-xl text-stone-300 h-lvh w-full divide-y divide-stone-600">
+      <img
+        src={item.image}
+        alt="item-image"
+        className="h-96 w-full object-cover"
+      />
+      <p className="py-1 uppercase">{item.name}</p>
+      <div className="flex justify-between py-1">
+        <span className="text-sm text-stone-400">Артикул: {item.article}</span>
+        <p className="">{item.price} UAH</p>
+      </div>
+    </div> */
+}
