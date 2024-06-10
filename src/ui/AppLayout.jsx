@@ -10,7 +10,7 @@ function AppLayout() {
     <div>
       <Header />
       <Menu />
-      <Cart />
+      {/* <Cart /> */}
       <MenuCatalog />
       <Outlet  />
       <Footer />

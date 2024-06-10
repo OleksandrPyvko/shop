@@ -14,19 +14,19 @@ function Catalog() {
   });
 
   return (
-    <div className="base-dark">
+    <div className="base-dark text-stone-200">
       <CatalogFilter />
       {isLoading && <p>Loading... </p>}
       {error && <p>{error.message}</p>}
       {data && data.length > 0 ? (
-        data.map((item) => {
-          <ItemCard item={item} />;
-        })
+        <ul>
+          {data.map((item) => (
+            <ItemCard key={item.id} item={item} isLoading={isLoading}/>
+          ))}
+        </ul>
       ) : (
-        <p>No items found</p>
+        <p></p>
       )}
-
-      <p>fdssdfsdf</p>
     </div>
   );
 }

@@ -7,6 +7,6 @@ export async function getItems(category) {
     .eq("category", category);
 
   if (error) throw new Error(error.message);
-  console.log(data);
+
   return data;
 }
