@@ -14,14 +14,14 @@ function Catalog() {
   });
 
   return (
-    <div className="base-dark text-stone-200">
+    <div className="base-dark text-stone-200 min-h-min ">
       <CatalogFilter />
-      {isLoading && <p>Loading... </p>}
+      {isLoading && <p className="min-h-svh">Loading... </p>}
       {error && <p>{error.message}</p>}
       {data && data.length > 0 ? (
         <ul>
           {data.map((item) => (
-            <ItemCard key={item.id} item={item} isLoading={isLoading}/>
+            <ItemCard key={item.id} id={item.id} item={item} isLoading={isLoading} />
           ))}
         </ul>
       ) : (

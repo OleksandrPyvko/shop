@@ -7,12 +7,12 @@ import Cart from "../components/Cart";
 
 function AppLayout() {
   return (
-    <div>
+    <div className="min-h-screen">
       <Header />
       <Menu />
       {/* <Cart /> */}
       <MenuCatalog />
-      <Outlet  />
+      <Outlet />
       <Footer />
     </div>
   );

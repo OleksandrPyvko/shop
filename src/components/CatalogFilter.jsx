@@ -17,7 +17,7 @@ function CatalogFilter() {
 
   return (
     <div
-      className="flex overflow-x-auto whitespace-nowrap scroll-snap-x  pt-[75px] pb-[20px] "
+      className="flex overflow-x-auto whitespace-nowrap scroll-snap-x  pt-[75px]  "
       style={{ scrollbarWidth: "none" }}
     >
       <button

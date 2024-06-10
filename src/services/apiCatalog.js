@@ -10,3 +10,9 @@ export async function getItems(category) {
 
   return data;
 }
+
+export async function getItemDetails(id) {
+  let { data, error } = await supabase.from("Items").select("*").eq("id", id).single();
+  // console.log(data);
+  return data;
+}
