@@ -10,7 +10,7 @@ function ItemDetails() {
   });
 
   return (
-    <>
+    <div className="">
       {isLoading ? (
         <div className="pt-[75px]">Loading...</div>
       ) : (
@@ -18,7 +18,7 @@ function ItemDetails() {
           <img src={data?.image} alt="" />
         </div>
       )}
-    </>
+    </div>
   );
 }
 

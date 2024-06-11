@@ -3,6 +3,7 @@ import CatalogFilter from "../components/CatalogFilter";
 import { useSearchParams } from "react-router-dom";
 import { getItems } from "../services/apiCatalog";
 import ItemCard from "../components/ItemCard";
+import SkeletonLoader from "../components/SkeletonLoader";
 
 function Catalog() {
   const [searchParams] = useSearchParams();
@@ -16,12 +17,18 @@ function Catalog() {
   return (
     <div className="base-dark text-stone-200 min-h-min ">
       <CatalogFilter />
-      {isLoading && <p className="min-h-svh">Loading... </p>}
+      {/* {isLoading && <p className="min-h-svh">Loading... </p>} */}
+      {isLoading && <SkeletonLoader />}
       {error && <p>{error.message}</p>}
       {data && data.length > 0 ? (
         <ul>
           {data.map((item) => (
-            <ItemCard key={item.id} id={item.id} item={item} isLoading={isLoading} />
+            <ItemCard
+              key={item.id}
+              id={item.id}
+              item={item}
+              isLoading={isLoading}
+            />
           ))}
         </ul>
       ) : (

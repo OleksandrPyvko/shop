@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import SkeletonLoader from "./SkeletonLoader";
 
 export function ItemCard({ item, isLoading }) {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export function ItemCard({ item, isLoading }) {
       ) : (
         <div
           onClick={() => handleClick(id)}
-          className=" py-6 px-4 shadow-xl text-stone-300   w-full divide-y divide-stone-600"
+          className=" py-6 px-4 shadow-xl text-stone-300 bg-stone-500 bg-opacity-20   w-full divide-y divide-stone-600"
           style={{
             cursor: "pointer",
           }}
