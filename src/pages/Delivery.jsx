@@ -91,7 +91,7 @@ function Delivery() {
           <p>Дякуємо вам за розуміння та співпрацю!</p>
         </ul>
       </div>
-      <div className="bg-stone-400 text-stone-900  text-3xl py-4 text-center">
+      <div className="bg-stone-700 text-stone-300   text-3xl py-4 text-center">
         #T-SHOP_CULTURE
       </div>
     </div>

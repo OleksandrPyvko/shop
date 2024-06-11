@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .active {
-  text-shadow:2px 1px 2px hsla(30, 6%, 13%, 0.5);
-  color: #d4d4cc
+  text-shadow: 2px 1px 2px hsla(30, 6%, 13%, 0.5);
+  color: #d4d4cc;
 }
 
 .base {
@@ -51,4 +51,33 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.skeleton-loader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.skeleton-image {
+  animation: pulse 1.5s infinite ease-in-out;
+  background-color: #adaca3;
+}
+
+.skeleton-text {
+  animation: pulse 1.5s infinite ease-in-out;
+  background-color: #adaca3;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
