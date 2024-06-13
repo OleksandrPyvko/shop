@@ -4,11 +4,13 @@ import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 import MenuCatalog from "../components/MenuCatalog";
 import Cart from "../components/Cart";
+import AdminPage from "../components/AdminPage";
 
 function AppLayout() {
   return (
     <div className="min-h-screen">
       <Header />
+      <AdminPage />
       <Menu />
       {/* <Cart /> */}
       <MenuCatalog />

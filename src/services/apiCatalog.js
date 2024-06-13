@@ -12,7 +12,20 @@ export async function getItems(category) {
 }
 
 export async function getItemDetails(id) {
-  let { data, error } = await supabase.from("Items").select("*").eq("id", id).single();
+  let { data, error } = await supabase
+    .from("Items")
+    .select("*")
+    .eq("id", id)
+    .single();
   // console.log(data);
   return data;
+}
+
+export async function createItem(newItem) {
+  const { data, error } = await supabase
+    .from("Items")
+    .insert([newItem])
+    .select();
+
+  if (error) throw new Error(error.message);
 }
