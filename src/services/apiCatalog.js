@@ -29,3 +29,12 @@ export async function createItem(newItem) {
 
   if (error) throw new Error(error.message);
 }
+
+export async function deleteItem(id) {
+  const { error } = await supabase
+    .from("Items")
+    .delete()
+    .eq("id", id);
+
+    if (error) throw new Error(error.message);
+}

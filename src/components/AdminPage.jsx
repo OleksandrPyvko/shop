@@ -4,7 +4,7 @@ import { createItem } from "../services/apiCatalog";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 function AdminPage() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const queryClient = useQueryClient();
 
@@ -15,6 +15,7 @@ function AdminPage() {
       queryClient.invalidateQueries({
         queryKey: ["items"],
       });
+      reset();
     },
     onError: (err) => console.error(err),
   });
@@ -54,7 +55,9 @@ function AdminPage() {
         <input accept="image/*" id="image" {...register("image")} />
       </FormRow>
 
-      <button type="submit">Add</button>
+      <button disabled={isLoading} type="submit">
+        Add
+      </button>
       <button type="reset">Cancel</button>
     </form>
   );

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import SkeletonLoader from "./SkeletonLoader";
+import { deleteItem } from "../services/apiCatalog";
 
 export function ItemCard({ item, isLoading }) {
   const navigate = useNavigate();
@@ -8,6 +8,8 @@ export function ItemCard({ item, isLoading }) {
   function handleClick() {
     navigate(`/item/${id}`);
   }
+
+  
 
   return (
     <>
