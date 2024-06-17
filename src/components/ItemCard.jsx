@@ -9,6 +9,8 @@ export function ItemCard({ item, isLoading }) {
     navigate(`/item/${id}`);
   }
 
+
+
   
 
   return (

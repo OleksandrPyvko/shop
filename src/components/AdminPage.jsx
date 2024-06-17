@@ -21,14 +21,15 @@ function AdminPage() {
   });
 
   function onSubmit(data) {
-    mutate(data);
+    mutate({...data, image: data.image[0]});
+    
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="py-[75px] bg-stone-500">
+    <form onSubmit={handleSubmit(onSubmit)} className="py-[75px] bg-stone-500 px-6">
       <FormRow>
         <label htmlFor="name">Name</label>
-        <input type="text" id="name" {...register("name")} />
+        <input type="text" id="name" {...register("name", {required: 'Введіть назву'})} />
       </FormRow>
 
       <FormRow>
@@ -52,7 +53,7 @@ function AdminPage() {
 
       <FormRow>
         <label htmlFor="image">Image</label>
-        <input accept="image/*" id="image" {...register("image")} />
+        <input accept="image/*" type='file' id="image" {...register("image")} />
       </FormRow>
 
       <button disabled={isLoading} type="submit">

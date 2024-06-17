@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import Contacts from "./pages/Contacts";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ItemDetails from "./pages/ItemDetails";
+import AdminPage from "./components/AdminPage";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,8 @@ function App() {
                 <Route path="faq" element={<FAQ />} />
                 <Route path="contacts" element={<Contacts />} />
                 <Route path="about-us" element={<AboutUs />} />
-                <Route path="/item/:id" element={<ItemDetails />}/>
+                <Route path="/item/:id" element={<ItemDetails />} />
+                <Route path="/admin-tools" element={<AdminPage />} />
               </Route>
 
               {/* <Header />

@@ -1,8 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useMenu } from "../context/MenuContext";
 
 function Menu() {
   const { isOpen, toggleMenu, toggleCatalog } = useMenu();
+  const navigate = useNavigate();
+
+  function handleAddItems() {
+    navigate('/admin-tools');
+    toggleMenu();
+
+  }
 
   function handleClose() {
     toggleMenu();
@@ -25,6 +32,7 @@ function Menu() {
       <p className="uppercase text-center border-y py-4 text-stone-400 border-stone-400">
         Вхід / Реєстрація
       </p>
+      <button onClick={handleAddItems} className="px-6 py-4 bg-stone-400 text-stone-800 font-semibold mx-auto w-full">Додати товари</button>
       <ul className="flex flex-col gap-8 font-semibold text-xl text-stone-400 py-6 uppercase">
         <li>
           <NavLink onClick={handleClose} to="/">

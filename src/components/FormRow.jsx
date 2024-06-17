@@ -1,6 +1,6 @@
 function FormRow({children}) {
     return (
-        <div>
+        <div className="justify flex">
             {children}
         </div>
     )
