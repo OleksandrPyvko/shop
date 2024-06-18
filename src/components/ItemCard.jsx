@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { deleteItem } from "../services/apiCatalog";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export function ItemCard({ item, isLoading }) {
   const navigate = useNavigate();
@@ -9,23 +10,19 @@ export function ItemCard({ item, isLoading }) {
     navigate(`/item/${id}`);
   }
 
-
-
-  
-
   return (
     <>
       {isLoading ? (
         "Loading"
       ) : (
         <div
-          onClick={() => handleClick(id)}
           className=" py-6 px-4 shadow-xl text-stone-300 bg-stone-500 bg-opacity-20   w-full divide-y divide-stone-600"
           style={{
             cursor: "pointer",
           }}
         >
           <img
+            onClick={() => handleClick(id)}
             src={item.image}
             alt="item-image"
             className="h-96 w-full min-h-96 object-cover"
@@ -37,6 +34,14 @@ export function ItemCard({ item, isLoading }) {
             </span>
             <p className="">{item.price} UAH</p>
           </div>
+          <div className="flex justify-center">
+            <button className="px-4 py-2 mx-2 rounded bg-lime-500 font-bold text-lime-950">
+              Edit
+            </button>
+            <button className="px-4 py-2 mx-2 rounded bg-orange-500 font-bold text-orange-950">
+              Delete
+            </button>
+          </div>
         </div>
       )}
     </>
@@ -44,18 +49,3 @@ export function ItemCard({ item, isLoading }) {
 }
 
 export default ItemCard;
-
-{
-  /* <div className=" py-6 px-4 shadow-xl text-stone-300 h-lvh w-full divide-y divide-stone-600">
-      <img
-        src={item.image}
-        alt="item-image"
-        className="h-96 w-full object-cover"
-      />
-      <p className="py-1 uppercase">{item.name}</p>
-      <div className="flex justify-between py-1">
-        <span className="text-sm text-stone-400">Артикул: {item.article}</span>
-        <p className="">{item.price} UAH</p>
-      </div>
-    </div> */
-}

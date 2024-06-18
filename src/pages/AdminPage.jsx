@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import FormRow from "./FormRow";
+import FormRow from "../components/FormRow";
 import { createItem } from "../services/apiCatalog";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 

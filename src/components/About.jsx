@@ -9,8 +9,8 @@ function About() {
         <h2 className="font-bold text-stone-600">ПРО — БРЕНД</h2>
       </div>
       <div className="relative h-[70%]">
-        <img src={over} alt="" className="z-10 relative " loading="lazy" />
-        <div className="bg-stone-500 rounded-md w-[90%] h-[300px] z-0 m-auto absolute bottom-0 right-[50%] translate-x-[50%]"></div>
+        <img src={over} alt="" className="z-10 relative h-[400px] m-auto" loading="lazy" />
+        <div className="bg-stone-500 rounded-md w-[90%] min-w-[40%] h-[300px] z-0 m-auto absolute bottom-0 right-[50%] translate-x-[50%]"></div>
       </div>
       <article className="p-6 font-semibold monteserrat  text-stone-600 ">
         T-SHOP - український бренд одягу, що поєднав в собі утилітарний,

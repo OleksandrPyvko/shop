@@ -43,10 +43,10 @@ function Carousel({ images }) {
               transform: `translateY(${scrollPosition * 0.4}px)`,
             }}
           >
-            <div className="absolute w-[110px] top-[65px] left-[30px] uppercase text-stone-300 dela text-lg flex flex-col ">
+            <div className="absolute font-semibold text-shadow-bright w-[110px] top-[10%] left-[10%] uppercase text-stone-700  text-2xl flex flex-col md:text-4xl md:left-[10%] md:top-[20%] lg:text-6xl lg:font-normal ">
               <span>{slide.title}</span>
 
-              <span className="text-stone-700 font-bold my-1 mb-3">
+              <span className="text-stone-200 font-normal text-3xl my-1 mb-3 text-shadow-stone">
                 ₴ {slide.price}
               </span>
               <LinkButton></LinkButton>

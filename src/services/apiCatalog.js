@@ -45,12 +45,16 @@ export async function createItem(newItem) {
     .upload(imageName, newItem.image);
   if (uploadError) {
     throw new Error(error.message);
-  } else {
   }
+
+  return data;
 }
 
 export async function deleteItem(id) {
-  const { error } = await supabase.from("Items").delete().eq("id", id);
+  const { data, error } = await supabase.from("Items").delete().eq("id", id);
+  console.log("delete");
 
   if (error) throw new Error(error.message);
+
+  return data;
 }
