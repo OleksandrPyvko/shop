@@ -27,7 +27,7 @@ function Test() {
 
   return (
     <>
-    <AdminPage />
+      <AdminPage />
       {isLoading && "loading"}
       <div>
         {data?.map((item) => (

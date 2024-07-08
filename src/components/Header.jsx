@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useMenu } from "../context/MenuContext";
+import { useCart } from "../context/CartContext";
 
 function Header() {
   const [scrolled, setIsScrolled] = useState(false);
   const { toggleMenu } = useMenu();
+  const {toggleCart} = useCart()
 
   useEffect(() => {
     function handleScroll() {
@@ -19,7 +21,7 @@ function Header() {
   return (
     <>
       <div
-        className={`text-shadow-stone fixed transition-all duration-300 z-50 top-0 left-0 right-0 flex justify-between w-screen py-5 px-6 ${
+        className={`text-shadow-stone fixed transition-all duration-700 z-50 top-0 left-0 right-0 flex justify-between w-screen py-5 px-6 ${
           scrolled
             ? "bg-stone-800 bg-opacity-50 text-stone-300 backdrop-blur-sm "
             : ""
@@ -41,6 +43,8 @@ function Header() {
             xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 483.1 483.1"
             xmlSpace="preserve"
+
+            onClick={toggleCart}
           >
             <g>
               <path

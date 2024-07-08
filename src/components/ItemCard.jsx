@@ -35,12 +35,7 @@ export function ItemCard({ item, isLoading }) {
             <p className="">{item.price} UAH</p>
           </div>
           <div className="flex justify-center">
-            <button className="px-4 py-2 mx-2 rounded bg-lime-500 font-bold text-lime-950">
-              Edit
-            </button>
-            <button className="px-4 py-2 mx-2 rounded bg-orange-500 font-bold text-orange-950">
-              Delete
-            </button>
+           
           </div>
         </div>
       )}

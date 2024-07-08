@@ -11,7 +11,7 @@ function AppLayout() {
     <div className="min-h-screen">
       <Header />
       <Menu />
-      {/* <Cart /> */}
+      <Cart />
       <MenuCatalog />
       <Outlet />
       <Footer />
