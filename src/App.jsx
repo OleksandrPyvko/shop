@@ -13,6 +13,7 @@ import AdminPage from "./pages/AdminPage";
 import Test from "./pages/Test";
 import { CartProvider } from "./context/CartContext";
 import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ function App() {
                   <Route path="/test" element={<Test />} />
                 </Route>
                 <Route path='/login' element={<Login />}/>
+                <Route path='/signup' element={<SignUp />}/>
 
                 {/* <Header />
       

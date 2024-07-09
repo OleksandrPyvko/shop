@@ -1,14 +1,30 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useMenu } from "../context/MenuContext";
+import { useUser } from "../features/auth/useUser";
+import { logout } from "../services/apiAuth";
+import { useQueryClient } from "@tanstack/react-query";
 
 function Menu() {
   const { isOpen, toggleMenu, toggleCatalog } = useMenu();
   const navigate = useNavigate();
+  const { isAuthenticated, user } = useUser();
+  
+
+  const queryClient = useQueryClient();
+
+  function handleLogin() {
+    navigate("/login");
+    toggleMenu();
+  }
+
+  function handleLogout() {
+    logout();
+    queryClient.invalidateQueries("user");
+  }
 
   function handleAddItems() {
-    navigate('/admin-tools');
+    navigate("/admin-tools");
     toggleMenu();
-
   }
 
   function handleClose() {
@@ -26,13 +42,32 @@ function Menu() {
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
+      {}
       <button onClick={toggleMenu} className="px-2 py-6">
         X
       </button>
-      <p className="uppercase text-center border-y py-4 text-stone-400 border-stone-400">
+      {!isAuthenticated ? (
+        <button
+          onClick={handleLogin}
+          className=" uppercase text-center border-y py-4 text-stone-400 border-stone-400"
+        >
+          Вхід / Реєстрація
+        </button>
+      ) : (
+        <button onClick={handleLogout}>Logout</button>
+      )}
+      {/* <button
+        onClick={handleLogin}
+        className=" uppercase text-center border-y py-4 text-stone-400 border-stone-400"
+      >
         Вхід / Реєстрація
-      </p>
-      <button onClick={handleAddItems} className="px-6 py-4 bg-stone-400 text-stone-800 font-semibold mx-auto w-full">Додати товари</button>
+      </button> */}
+      <button
+        onClick={handleAddItems}
+        className="px-6 py-4 bg-stone-400 text-stone-800 font-semibold mx-auto w-full"
+      >
+        Додати товари
+      </button>
       <ul className="flex flex-col gap-8 font-semibold text-xl text-stone-400 py-6 uppercase">
         <li>
           <NavLink onClick={handleClose} to="/">
