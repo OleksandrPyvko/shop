@@ -1,6 +1,7 @@
 import { useCart } from "../context/CartContext";
 import { useLogout } from "../features/auth/useLogout";
 import { useUser } from "../features/auth/useUser";
+import CartItem from "./CartItem";
 
 function Cart() {
   const { isCartOpen, toggleCart } = useCart();

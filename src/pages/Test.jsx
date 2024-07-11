@@ -1,8 +1,13 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { deleteItem, getItems } from "../services/apiCatalog";
 import AdminPage from "./AdminPage";
+import { getUserIdentifier } from "../services/apiCart";
 
 function Test() {
+  function getUser() {
+    getUserIdentifier();
+  }
+
   const { data, isLoading, error } = useQuery({
     queryKey: ["items"],
     queryFn: () => getItems("hoodies"),
@@ -27,6 +32,9 @@ function Test() {
 
   return (
     <>
+      <button className="bg-slate-400 p-6 mt-10" onClick={() => getUser()}>
+        get user
+      </button>
       <AdminPage />
       {isLoading && "loading"}
       <div>
