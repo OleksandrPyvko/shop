@@ -20,25 +20,31 @@ export async function getUserIdentifier() {
   }
 }
 
-//* Function to fetch or create a cart
 export async function getOrCreateCart() {
-  const { user_id, is_guest } = getUserIdentifier();
+  const { user_id, is_guest } = await getUserIdentifier();
 
-  let { data, error } = await supabase
+  const { data, error } = await supabase
     .from("carts")
     .select("*")
     .eq("user_id", user_id)
-    .eq("is_guest", is_guest);
+    .eq("is_guest", is_guest)
+    .single();
 
-  if (error && error.message === "PGRST116") {
+  if (error && error.code === "PGRST116") {
+    //* If no cart found, insert a new cart
     const { data: newCart, error: insertError } = await supabase
       .from("carts")
       .insert([{ user_id, is_guest }])
-      .select();
+      .single();
 
-    if (insertError) throw insertError;
-
+    if (insertError) {
+      console.error("Insert Error:", insertError.message);
+      throw insertError;
+    }
     return newCart;
+  } else if (error) {
+    console.error("Select Error:", error.message);
+    throw error;
   }
 
   return data;

@@ -8,7 +8,6 @@ function Menu() {
   const { isOpen, toggleMenu, toggleCatalog } = useMenu();
   const navigate = useNavigate();
   const { isAuthenticated, user } = useUser();
-  
 
   const queryClient = useQueryClient();
 
@@ -42,7 +41,6 @@ function Menu() {
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      {}
       <button onClick={toggleMenu} className="px-2 py-6">
         X
       </button>

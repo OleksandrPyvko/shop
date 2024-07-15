@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useMenu } from "../context/MenuContext";
-import { useCart } from "../context/CartContext";
+import { useCartContext } from "../context/CartContext";
 
 function Header() {
   const [scrolled, setIsScrolled] = useState(false);
   const { toggleMenu } = useMenu();
-  const {toggleCart} = useCart()
+  const { toggleCart } = useCartContext();
 
   useEffect(() => {
     function handleScroll() {
@@ -27,12 +27,14 @@ function Header() {
             : ""
         }`}
       >
-        <button onClick={toggleMenu} className="text-[#d6d3d1]">=</button>
+        <button onClick={toggleMenu} className="text-[#d6d3d1]">
+          =
+        </button>
         <span className="ml-4 font-semibold text-xl dela text-stone-300 ">
           T - S H O P
         </span>
         <button>
-        {/* #2b2625 */}
+          {/* #2b2625 */}
           <svg
             fill={scrolled ? "#d6d3d1" : "#d6d3d1"}
             height="20px"
@@ -43,7 +45,6 @@ function Header() {
             xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 483.1 483.1"
             xmlSpace="preserve"
-
             onClick={toggleCart}
           >
             <g>

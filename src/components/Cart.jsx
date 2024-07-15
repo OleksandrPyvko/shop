@@ -1,12 +1,13 @@
-import { useCart } from "../context/CartContext";
+import { useCartContext } from "../context/CartContext";
 import { useLogout } from "../features/auth/useLogout";
 import { useUser } from "../features/auth/useUser";
-import CartItem from "./CartItem";
+import { useCart } from "../features/auth/useCart";
 
 function Cart() {
-  const { isCartOpen, toggleCart } = useCart();
+  const { isCartOpen, toggleCart } = useCartContext();
   const { user } = useUser();
-  const { logout, isLoading } = useLogout();
+  const { logout } = useLogout();
+  const { data, error } = useCart();
 
   return (
     <div
@@ -23,10 +24,10 @@ function Cart() {
       <button className="bg-cyan-300 px-2 text-cyan-900" onClick={toggleCart}>
         toggle
       </button>
+
+      <div className="text-white">Cart id: {data?.id} </div>
     </div>
   );
 }
 
 export default Cart;
-
-// z-50 fixed top-0 h-svh bg-stone-900 w-[100%]
