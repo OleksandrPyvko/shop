@@ -1,10 +1,9 @@
+import { getUser } from "./apiAuth";
 import supabase from "./supabase";
 import { v4 as uuidv4 } from "uuid";
 
 export async function getUserIdentifier() {
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const user = await getUser();
 
   if (user) {
     console.log("User", user.id);
@@ -29,23 +28,32 @@ export async function getOrCreateCart() {
     .eq("user_id", user_id)
     .eq("is_guest", is_guest)
     .single();
+  if (error) {
+    if (
+      error.code === "PGRST116" ||
+      error.message === "JSON object requested, multiple (or no) rows returned"
+    ) {
+      const { data: newCart, error: insertError } = await supabase
+        .from("carts")
+        .insert([{ user_id, is_guest }])
+        .select()
+        .single();
 
-  if (error && error.code === "PGRST116") {
-    //* If no cart found, insert a new cart
-    const { data: newCart, error: insertError } = await supabase
-      .from("carts")
-      .insert([{ user_id, is_guest }])
-      .single();
-
-    if (insertError) {
-      console.error("Insert Error:", insertError.message);
-      throw insertError;
+      if (insertError) {
+        console.error("Insert Error:asasa", insertError.message);
+        throw insertError;
+      }
+      return newCart;
+    } else {
+      console.error("Select Error:", error.message);
+      throw error;
     }
-    return newCart;
-  } else if (error) {
-    console.error("Select Error:", error.message);
-    throw error;
   }
-
   return data;
+}
+
+export async function getCartItems(cart_id) {
+  let { data: cartItems} = await supabase.from("cartItems").select("*").eq('cart_id', cart_id);
+
+  return cartItems;
 }

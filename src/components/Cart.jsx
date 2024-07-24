@@ -1,13 +1,17 @@
 import { useCartContext } from "../context/CartContext";
 import { useLogout } from "../features/auth/useLogout";
 import { useUser } from "../features/auth/useUser";
-import { useCart } from "../features/auth/useCart";
+import { useGetOrCreateCart } from "../features/auth/useGetOrCreateCart";
+import { useCartItems } from "../features/useCartItems";
+import CartItem from "./CartItem";
 
 function Cart() {
   const { isCartOpen, toggleCart } = useCartContext();
   const { user } = useUser();
   const { logout } = useLogout();
-  const { data, error } = useCart();
+  const { data, error } = useGetOrCreateCart();
+
+  const cartItems = useCartItems();
 
   return (
     <div
@@ -16,6 +20,16 @@ function Cart() {
       }`}
     >
       <p>{user?.email}</p>
+
+      <div className="p-4 bg-green-400">
+        {cartItems?.map((item) => (
+          
+          <CartItem key={item?.id} itemId={item?.item_id} />
+          
+          
+        ))}
+        
+      </div>
 
       <div>
         <button onClick={logout}>Logout</button>

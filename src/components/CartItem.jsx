@@ -1,8 +1,12 @@
-function CartItem({ name, price }) {
+import { useItemDetails } from "../features/useItemDetails";
+
+function CartItem({ itemId }) {
+  const { data, isLoading } = useItemDetails(itemId);
+
   return (
     <div>
-      <p>{name}</p>
-      <p>{price} UAH</p>
+      <p>{data?.id}</p>
+      <p>{data?.price} UAH</p>
     </div>
   );
 }

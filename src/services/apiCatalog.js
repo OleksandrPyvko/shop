@@ -31,6 +31,7 @@ export async function createItem(newItem) {
   // https://krkmpmqyryoaqsvtnfxo.supabase.co/storage/v1/object/public/items_images/2be6e498-a022-45b3-a400-e9a7b1d8fc82.jfif
   // const imagePath = `${supabaseUrl}/storage/v1/object/public/items_images/${imageName}`;
   const imagePath = `https://krkmpmqyryoaqsvtnfxo.supabase.co/storage/v1/object/public/items_images/${imageName}`;
+  
 
   const { data, error } = await supabase
     .from("Items")
