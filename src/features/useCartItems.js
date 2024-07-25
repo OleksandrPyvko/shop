@@ -4,6 +4,7 @@ import { getCartItems } from "../services/apiCart";
 
 export function useCartItems() {
   const { data: cart } = useGetOrCreateCart();
+  
 
   const {
     data: cartItems,
