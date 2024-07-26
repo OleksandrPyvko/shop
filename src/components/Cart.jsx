@@ -4,6 +4,7 @@ import { useUser } from "../features/auth/useUser";
 import { useGetOrCreateCart } from "../features/auth/useGetOrCreateCart";
 import { useCartItems } from "../features/useCartItems";
 import CartItem from "./CartItem";
+import { IoClose } from "react-icons/io5";
 
 function Cart() {
   const { isCartOpen, toggleCart } = useCartContext();
@@ -13,7 +14,7 @@ function Cart() {
 
   const cartItems = useCartItems();
 
-  const fullName = user?.identities[0].identity_data.fullName;
+  const fullName = user?.user_metadata.fullName;
 
   console.log("user", user);
   console.log();
@@ -23,13 +24,18 @@ function Cart() {
         isCartOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      
+      <div className="flex justify-end">
+        <button className="py-6 px-2 text-stone-200 text-2xl " onClick={toggleCart}>
+          <IoClose />
+        </button>
+      </div>
+
       <p>{fullName}</p>
 
       <h2 className="text-center text-2xl w-full py-4">Кошик</h2>
 
       <div className="p-4 rounded-md bg-stone-800 text-stone-300">
-        {cartItems.length === 0 && (
+        {cartItems?.length === 0 && (
           <p className="text-center">
             Ой-йой <br /> Ви ще нічого не додали до кошика
           </p>
@@ -42,16 +48,6 @@ function Cart() {
           />
         ))}
       </div>
-
-      <div>
-        <button onClick={logout}>Logout</button>
-      </div>
-
-      <button className="bg-cyan-300 px-2 text-cyan-900" onClick={toggleCart}>
-        toggle
-      </button>
-
-      <div className="text-white">Cart id: {data?.id} </div>
     </div>
   );
 }

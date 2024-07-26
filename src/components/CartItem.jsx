@@ -13,10 +13,15 @@ function CartItem({ itemId, quantity }) {
       </div>
       <div>
         <img
-          className="mw-36 h-36 rounded-md object-cover"
-          src={item.image}
+          className="mw-36 h-24 rounded-t object-cover"
+          src={item?.image}
           alt=""
         />
+        <div className="w-full flex justify-center border border-stone-500 rounded-b  ">
+          <span className="w-1/3 text-center">-</span>
+          <span className="w-1/3 text-center">1</span>
+          <span className="w-1/3 text-center">+</span>
+        </div>
       </div>
     </div>
   );
