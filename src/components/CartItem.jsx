@@ -19,7 +19,7 @@ function CartItem({ itemId, quantity }) {
         />
         <div className="w-full flex justify-center border border-stone-500 rounded-b  ">
           <span className="w-1/3 text-center">-</span>
-          <span className="w-1/3 text-center">1</span>
+          <span className="w-1/3 text-center">{quantity}</span>
           <span className="w-1/3 text-center">+</span>
         </div>
       </div>

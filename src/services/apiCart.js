@@ -52,8 +52,21 @@ export async function getOrCreateCart() {
   return data;
 }
 
+// export async function getCartItems(cart_id) {
+//   let { data: cartItems } = await supabase
+//     .from("cartItems")
+//     .select("*")
+//     .eq("cart_id", cart_id);
+
+//   return cartItems;
+// }
+
+
 export async function getCartItems(cart_id) {
-  let { data: cartItems} = await supabase.from("cartItems").select("*").eq('cart_id', cart_id);
+  let { data: cartItems } = await supabase
+    .from("cartItems")
+    .select("*, Items(price)")
+    .eq("cart_id", cart_id)
 
   return cartItems;
 }

@@ -6,6 +6,5 @@ export function useGetOrCreateCart() {
     queryKey: ["cart"],
     queryFn: getOrCreateCart,
   });
-
   return { data, isLoading, error };
 }

@@ -41,19 +41,22 @@ function Menu() {
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      <button onClick={toggleMenu} className="px-2 py-6">
+      <button onClick={toggleMenu} className="px-2 pt-6">
         X
       </button>
+      <div className='flex align-middle justify-center m-auto p-4 w-2/3'>
+
       {!isAuthenticated ? (
         <button
-          onClick={handleLogin}
-          className=" uppercase text-center border-y py-4 text-stone-400 border-stone-400"
+        onClick={handleLogin}
+        className="w-full uppercase text-center border-y py-4 text-stone-400 border-stone-400"
         >
           Вхід / Реєстрація
         </button>
       ) : (
         <button onClick={handleLogout}>Logout</button>
       )}
+      </div>
       {/* <button
         onClick={handleLogin}
         className=" uppercase text-center border-y py-4 text-stone-400 border-stone-400"
