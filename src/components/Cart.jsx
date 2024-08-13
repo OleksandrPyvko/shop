@@ -14,6 +14,7 @@ function Cart() {
   const { logout } = useLogout();
   const { data, error } = useGetOrCreateCart();
 
+  //!! updating cart content on logout etc
   const cartItems = useCartItems();
   const fullName = user?.user_metadata.fullName;
 
@@ -57,8 +58,7 @@ function Cart() {
             itemId={item?.item_id}
           />
         ))}
-
-        <p>Total price: {total} uah</p>
+        {cartItems?.length !== 0 && <p>Total price: {total} uah</p>}
       </div>
     </div>
   );
