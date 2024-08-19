@@ -61,12 +61,25 @@ export async function getOrCreateCart() {
 //   return cartItems;
 // }
 
-
 export async function getCartItems(cart_id) {
   let { data: cartItems } = await supabase
     .from("cartItems")
     .select("*, Items(price)")
-    .eq("cart_id", cart_id)
+    .eq("cart_id", cart_id);
 
   return cartItems;
+}
+
+export async function addToCart({cart_id, quantity, item_id}) {
+  const { data, error } = await supabase
+    .from("cartItems")
+    .insert([{ cart_id: cart_id, quantity: quantity, item_id: item_id }])
+    .select();
+
+    if (error) {
+      console.error("Insert Error:", error.message);
+      throw error;
+    }
+  
+    return data;
 }

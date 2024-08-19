@@ -14,6 +14,8 @@ function Cart() {
   const { logout } = useLogout();
   const { data, error } = useGetOrCreateCart();
 
+  console.log(data);
+
   //!! updating cart content on logout etc
   const cartItems = useCartItems();
   const fullName = user?.user_metadata.fullName;
@@ -28,7 +30,7 @@ function Cart() {
 
   return (
     <div
-      className={`bg-stone-900 fixed top-0 w-[100%] rounded-md transition-transform transform h-lvh z-50 duration-500 text-white px-6 ${
+      className={`bg-stone-900 z-50 h-full fixed top-0 w-[100%] overflow-y-auto max-h-[100vh] rounded-md transition-transform transform duration-500 text-white px-6 ${
         isCartOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
@@ -51,14 +53,18 @@ function Cart() {
             Ой-йой <br /> Ви ще нічого не додали до кошика
           </p>
         )}
-        {cartItems?.map((item, index) => (
-          <CartItem
-            key={index}
-            quantity={item.quantity}
-            itemId={item?.item_id}
-          />
-        ))}
-        {cartItems?.length !== 0 && <p>Total price: {total} uah</p>}
+        <div className="">
+          {cartItems?.map((item, index) => (
+            <CartItem
+              key={index}
+              quantity={item.quantity}
+              itemId={item?.item_id}
+            />
+          ))}
+        </div>
+        {cartItems?.length !== 0 && (
+          <p className="flex justify-end pt-4">Total price: {total} uah</p>
+        )}
       </div>
     </div>
   );

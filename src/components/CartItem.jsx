@@ -5,11 +5,11 @@ function CartItem({ itemId, quantity }) {
   const { data: item, isLoading: itemLoading } = useItemDetails(itemId);
 
   return (
-    <div className="flex py-2 px-4 justify-between">
-      <div className="my-auto w-full">
-        <p className="uppercase">{data?.name}</p>
-        <p>{data?.price} UAH</p>
-        <p>{quantity}</p>
+    <div className="flex py-2 px-2  ">
+      <div className=" h-full w-full flex flex-col align-middle">
+        <p className="uppercase text-xs w-full">{data?.name}</p>
+        <p className="text-xs w-full">{data?.price} UAH</p>
+        {/* <p>{quantity}</p> */}
       </div>
       <div>
         <img

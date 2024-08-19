@@ -1,13 +1,20 @@
 import { useNavigate } from "react-router-dom";
-import { deleteItem } from "../services/apiCatalog";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
+import { useAddItemToCart } from "../features/auth/useAddToCart";
 
-export function ItemCard({ item, isLoading }) {
+export function ItemCard({ item, isLoading, cart_id }) {
+  const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
-  const id = item.id;
+  const item_id = item.id;
+
+  const { addItemToCart, isLoading: isAdding } = useAddItemToCart();
+
+  function handleAdding() {
+    addItemToCart({ cart_id, quantity, item_id });
+  }
 
   function handleClick() {
-    navigate(`/item/${id}`);
+    navigate(`/item/${item_id}`);
   }
 
   return (
@@ -16,7 +23,7 @@ export function ItemCard({ item, isLoading }) {
         "Loading"
       ) : (
         <div
-          className=" py-6 px-4 shadow-xl text-stone-300 bg-stone-500 bg-opacity-20   w-full divide-y divide-stone-600"
+          className=" py-6 px-4 shadow-xl text-stone-300 bg-stone-500 bg-opacity-20   w-full divide-y divide-stone-600 flex flex-col"
           style={{
             cursor: "pointer",
           }}
@@ -34,9 +41,13 @@ export function ItemCard({ item, isLoading }) {
             </span>
             <p className="">{item.price} UAH</p>
           </div>
-          <div className="flex justify-center">
-           
-          </div>
+          <div className="flex justify-center"></div>
+          <button
+            onClick={handleAdding}
+            className="px-4 py-2 bg-stone-300 text-black rounded-full"
+          >
+            До кошика
+          </button>
         </div>
       )}
     </>

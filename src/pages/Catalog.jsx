@@ -4,10 +4,15 @@ import { useSearchParams } from "react-router-dom";
 import { getItems } from "../services/apiCatalog";
 import ItemCard from "../components/ItemCard";
 import SkeletonLoader from "../components/SkeletonLoader";
+import { useGetOrCreateCart } from "../features/auth/useGetOrCreateCart";
 
 function Catalog() {
   const [searchParams] = useSearchParams();
   const currentCategory = searchParams.get("category");
+  const { data: cartData } = useGetOrCreateCart();
+  const cartId = cartData?.id;
+
+  console.log("cart id", cartId );
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["items", currentCategory],
@@ -28,6 +33,7 @@ function Catalog() {
               id={item.id}
               item={item}
               isLoading={isLoading}
+              cart_id={cartId}
             />
           ))}
         </ul>
