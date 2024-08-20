@@ -10,6 +10,8 @@ export function useLogout() {
     mutationFn: logoutAPI,
     onSuccess: () => {
       queryClient.removeQueries();
+      queryClient.invalidateQueries(["cartItems"]);
+      queryClient.invalidateQueries(["getOrCreateCart"]);
       navigate("/", { replace: true });
     },
   });

@@ -18,7 +18,7 @@ function Cart() {
 
   //!! updating cart content on logout etc
   const cartItems = useCartItems();
-  const fullName = user?.user_metadata.fullName;
+  const fullName = user?.user_metadata?.fullName;
 
   useEffect(() => {
     const totalPrice = cartItems
@@ -42,6 +42,8 @@ function Cart() {
           <IoClose />
         </button>
       </div>
+
+      <button onClick={logout}>Logout</button>
 
       <p>{fullName}</p>
 
